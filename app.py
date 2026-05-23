@@ -28,3 +28,26 @@ def add_todo():
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+  from flask import Flask, render_template, request, redirect
+
+app = Flask(__name__)
+tasks = []
+
+@app.route('/')
+def index():
+    return render_template('index.html', tasks=tasks)
+
+@app.route('/add', methods=['POST'])
+def add():
+    task = request.form.get('task')
+    tasks.append(task)
+    return redirect('/')
+
+@app.route('/delete')
+def delete():
+    if tasks:
+        tasks.pop()
+    return redirect('/')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)  
