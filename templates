@@ -11,7 +11,7 @@
     </form>
     <ul>
         {% for task in tasks %}
-        <li>{{ task }} <a href="/delete/{{loop.index0}}">Delete</a></li>
+            <li>{{ task }} <a href="/delete/{{ loop.index0 }}">Delete</a></li>
         {% endfor %}
     </ul>
 </body>

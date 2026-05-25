@@ -6,9 +6,4 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/app 
- services:
-  web:
-    build: .
-    ports:
-      - "8080:5000"     
+      - .:/app
